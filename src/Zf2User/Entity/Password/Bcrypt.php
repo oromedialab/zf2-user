@@ -41,6 +41,11 @@ class Bcrypt implements PasswordInterface
 		return $this;
 	}
 
+	/**
+	 * Get instance of Bcrypt
+	 *
+	 * @return Bcrypt
+	 */
 	protected static function init()
 	{
 		if (!self::$bcrypt instanceof Password\Bcrypt) {

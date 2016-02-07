@@ -1,0 +1,26 @@
+{
+    "name": "oromedialab/zf2-user",
+    "description": "User Module for Zend Framework 2",
+    "license": "MIT",
+    "keywords": ["zf2-user", "user"],
+    "authors": [
+        {
+            "name": "Ibrahim Azhar Armar",
+            "email": "azhar@iarmar.com"
+        }
+    ],
+    "require": {
+        "php": ">5.4",
+        "oromedialab/zf2-lazy-form": "dev-master",
+        "zendframework/zend-servicemanager": "*",
+        "doctrine/doctrine-orm-module": "0.*",
+        "hounddog/doctrine-data-fixture-module" : "0.0.*",
+        "gedmo/doctrine-extensions": "2.*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Oml\\Zf2User\\": "src/"
+        },
+        "classmap": ["Module.php"]
+    }
+}

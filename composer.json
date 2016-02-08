@@ -11,7 +11,7 @@
     ],
     "require": {
         "php": ">5.4",
-        "oromedialab/zf2-lazy-form": "dev-release-0.2",
+        "oromedialab/zf2-lazy-form": "0.*",
         "oromedialab/doctrine-module-auth-extension": "dev-master",
         "zendframework/zend-servicemanager": "*",
         "doctrine/doctrine-orm-module": "0.*",

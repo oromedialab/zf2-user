@@ -13,6 +13,8 @@ use Oml\Zf2User\Entity\Password\PasswordInterface;
 /**
  * @ORM\Entity
  * @ORM\Table(name="user", indexes={@ORM\Index(name="search_userx", columns={"email", "slug"})})
+ * @ORM\InheritanceType("SINGLE_TABLE")
+ * @ORM\DiscriminatorMap({"zf2.user" = "\Oml\Zf2User\Entity\User", "user" = "\User\Entity\User"})
  */
 class User
 {
@@ -53,7 +55,7 @@ class User
      */
     protected $enabled = true;
 
-     /**
+    /**
      * @var DateTime
      *
      * @Gedmo\Timestampable(on="create")

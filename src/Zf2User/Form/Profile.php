@@ -20,7 +20,6 @@ class Profile extends Register
 
 		// Set Placeholder Parameter
 		$this->setPlaceholderParameter(':object-repository', $userRepository);
-		$this->setPlaceholderParameter(':object-repository', $userRepository);
 		$this->setPlaceholderParameter(':unique-object-fields', 'email');
 		$this->setPlaceholderParameter(':submit-btn-label', 'Save & Continue');
 

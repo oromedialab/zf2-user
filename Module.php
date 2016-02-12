@@ -13,7 +13,8 @@ class Module
 {
     protected $unrestrictedRoutes = array(
         'om-zf2-user-account-register',
-        'om-zf2-user-account-sign-in'
+        'om-zf2-user-account-sign-in',
+        'om-zf2-user-account-forgot-password'
     );
 
     public function onBootstrap(MvcEvent $e)

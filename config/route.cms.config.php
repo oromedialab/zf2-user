@@ -33,6 +33,16 @@ return array(
                     )
                 )
             ),
+            'om-zf2-user-account-forgot-password' => array(
+                'type' => 'Zend\Mvc\Router\Http\Literal',
+                'options' => array(
+                    'route' => '/user/account/forgot-password',
+                    'defaults' => array(
+                        'controller' => 'Oml\Zf2User\Controller\AccountController',
+                        'action' => 'forgot-password'
+                    )
+                )
+            ),
             'om-zf2-user-account-sign-in' => array(
                 'type' => 'Zend\Mvc\Router\Http\Literal',
                 'options' => array(

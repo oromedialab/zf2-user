@@ -3,6 +3,9 @@
 return [
 	'oml' => [
         'zf2-lazy-form' => [
+            'aliases' => [
+                'Form\SignIn' => 'Oml\Zf2User\Form\SignIn'
+            ],
             '*' => function(\Zend\Form\Form $form) {
                 $form->addFormElement(['name' => 'submit', 'label' => ':submit-btn-label', 'type' => 'button', 'lazy-set' => ['submit-btn']], ['priority' => -9999]);
                 $form->addFormElement(['name' => 'csrf', 'type' => 'csrf', 'lazy-set' => ['submit-btn']]);

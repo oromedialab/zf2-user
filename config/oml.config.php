@@ -60,6 +60,13 @@ return [
                         'fields' => ':no-record-exist-fields'
                     ]
                 ],
+                'record-exist' => [
+                    'name' => 'DoctrineModule\Validator\ObjectExists',
+                    'options' => [
+                        'object_repository' => ':object-repository',
+                        'fields' => ':no-record-exist-fields'
+                    ]
+                ],
                 'unique-object' => [
                     'name' => 'DoctrineModule\Validator\UniqueObject',
                     'options' => [
@@ -87,6 +94,9 @@ return [
                 ],
                 'no-record-exist' => [
                     'validators' => ['no-record-exist']
+                ],
+                'record-exist' => [
+                    'validators' => ['record-exist']
                 ],
                 'unique-object' => [
                     'validators' => ['unique-object']

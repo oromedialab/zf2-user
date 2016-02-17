@@ -11,11 +11,7 @@ use Zend\ServiceManager\ServiceManager;
 
 class Module
 {
-    protected $unrestrictedRoutes = array(
-        'om-zf2-user-account-register',
-        'om-zf2-user-account-sign-in',
-        'om-zf2-user-account-forgot-password'
-    );
+    protected $unrestrictedRoutes = array();
 
     public function onBootstrap(MvcEvent $e)
     {
@@ -23,6 +19,9 @@ class Module
         $moduleRouteListener = new ModuleRouteListener();
         $moduleRouteListener->attach($eventManager);
         $serviceManager = $e->getApplication()->getServiceManager();
+        $config = $serviceManager->get('config');
+        $omlConfig = $config['oml'];
+        $this->unrestrictedRoutes = $omlConfig['zf2-user']['unrestricted-routes'];
         $eventManager->attach(MvcEvent::EVENT_ROUTE, array($this, 'verifyAuthAccess'));
     }
 

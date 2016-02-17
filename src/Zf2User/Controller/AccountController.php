@@ -136,35 +136,6 @@ class AccountController extends AbstractActionController
 		));
 	}
 
-	public function forgotPasswordAction()
-	{
-		$sm = $this->getServiceLocator();
-		$em = $sm->get('Doctrine\ORM\EntityManager');
-		// $params = $this->params()->fromRoute();
-		// $request = $this->getRequest();
-		// $matchedRoute = $sm->get('Application')->getMvcEvent()->getRouteMatch();
-		// $user = $em->getRepository('\Oml\Zf2User\Entity\User')->findOneBy(array('slug' => $params['slug']));
-		// if (!$user) {
-		// 	$this->getResponse()->setStatusCode(404);
-  //           return;
-		// }
-		$request = $this->getRequest();
-		$form = $sm->get('FormElementManager')->get('Oml\Zf2User\Form\ForgotPassword');
-		// if ($request->isPost()) {
-		// 	$form->setData($request->getPost());
-		// 	if ($form->isValid($request->getPost())) {
-		// 		$data = $form->getData();
-		// 		$user->setPassword(new Password\Bcrypt($data['password']));
-		// 		$em->persist($user);
-		// 		$em->flush();
-		// 		$this->redirect()->toRoute($matchedRoute->getMatchedRouteName(), array('slug' => $user->getSlug()));
-		// 	}
-		// }
-		return new ViewModel(array(
-			'form' => $form
-		));
-	}
-
 	public function signOutAction()
 	{
 		$auth = $this->getServiceLocator()->get('Zend\Authentication\AuthenticationService');

@@ -2,6 +2,13 @@
 
 return [
 	'oml' => [
+        'zf2-user' => [
+            'unrestricted-routes' => [
+                'om-zf2-user-account-register',
+                'om-zf2-user-account-sign-in',
+                'om-zf2-user-account-forgot-password'
+            ]
+        ],
         'zf2-lazy-form' => [
             'aliases' => [
                 'Form\SignIn' => 'Oml\Zf2User\Form\SignIn'

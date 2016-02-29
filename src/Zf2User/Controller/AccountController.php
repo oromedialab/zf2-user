@@ -67,7 +67,7 @@ class AccountController extends AbstractActionController
     			if ($authResult->isValid()) {
                     $identity = $authResult->getIdentity();
                     $authService->getStorage()->write($identity);
-                    $this->redirect()->toRoute($matchedRoute->getMatchedRouteName());
+                    return $this->redirect()->toRoute('home');
                 }
 			}
 		}

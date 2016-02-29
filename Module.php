@@ -60,7 +60,7 @@ class Module
             return;
         }
         $authService = $serviceManager->get('Zend\Authentication\AuthenticationService');
-        // Unauthenticated has access to unrestricted routes only
+        // Unauthenticated user has access to unrestricted routes only
         if (!$authService->hasIdentity() && !in_array($matchedRouteName, $this->unrestrictedRoutes)) {
             $routeMatch->setParam('controller', __NAMESPACE__.'\Controller\AccountController');
             $routeMatch->setParam('action', 'sign-in');

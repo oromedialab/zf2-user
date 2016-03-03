@@ -16,8 +16,7 @@
         "zendframework/zend-servicemanager": "*",
         "doctrine/doctrine-orm-module": "0.*",
         "hounddog/doctrine-data-fixture-module" : "0.0.*",
-        "gedmo/doctrine-extensions": "2.*",
-        "hrevert/ht-session": "1.1.*"
+        "gedmo/doctrine-extensions": "2.*"
     },
     "autoload": {
         "psr-4": {

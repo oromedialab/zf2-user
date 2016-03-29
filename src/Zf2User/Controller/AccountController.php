@@ -56,8 +56,8 @@ class AccountController extends AbstractActionController
 				$data = $form->getData();
 				$authService = $sm->get('Zend\Authentication\AuthenticationService');
 				$adapter = $authService->getAdapter();
-    			$adapter->setIdentityValue($data['email']);
-    			$adapter->setCredentialValue($data['password']);
+    			$adapter->setIdentity($data['email']);
+    			$adapter->setCredential($data['password']);
     			$authResult = $authService->authenticate();
     			if (!$authResult->isValid()) {
     				foreach ($authResult->getMessages() as $message) {

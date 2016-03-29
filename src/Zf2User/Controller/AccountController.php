@@ -47,6 +47,7 @@ class AccountController extends AbstractActionController
 	{
 		$sm = $this->getServiceLocator();
 		$request = $this->getRequest();
+		$requestUri = $this->getRequest()->getRequestUri();
 		$matchedRoute = $sm->get('Application')->getMvcEvent()->getRouteMatch();
 		$form = $sm->get('FormElementManager')->get($sm->get('AliasManager')->alias('Form\SignIn'));
 		if ($request->isPost()) {
@@ -67,7 +68,7 @@ class AccountController extends AbstractActionController
     			if ($authResult->isValid()) {
                     $identity = $authResult->getIdentity();
                     $authService->getStorage()->write($identity);
-                    return $this->redirect()->toRoute('home');
+                    return $this->redirect()->toUrl($requestUri);
                 }
 			}
 		}

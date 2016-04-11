@@ -9,6 +9,8 @@ use Zend\Mvc\ModuleRouteListener;
 use Zend\Mvc\MvcEvent;
 use Zend\ServiceManager\ServiceManager;
 
+use Oml\Zf2User\Entity\SessionManager;
+
 class Module
 {
     protected $unrestrictedRoutes = array();
@@ -81,7 +83,7 @@ class Module
         }
         if (true === $forceUserLogout) {
             $authService->clearIdentity();
-            $sessionManager = new \Zend\Session\SessionManager();
+            $sessionManager = new SessionManager();
             $sessionManager->forgetMe();
             $routeMatch->setParam('controller', __NAMESPACE__.'\Controller\AccountController');
             $routeMatch->setParam('action', 'sign-in');
